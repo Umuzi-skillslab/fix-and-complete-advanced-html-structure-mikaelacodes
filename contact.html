@@ -11,9 +11,11 @@
 </head>
 
 <body>
+    <a href="#main-content">Skip to main content</a>
+
     <header class="top">
         <h1>Contact Us</h1>
-        <nav class="nav">
+        <nav class="nav" aria-label="Main navigation">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="media.html">Media</a>
@@ -21,38 +23,58 @@
         </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>Get In Touch</h2>
-            <form action="#" method="post">
+    <main id="main-content">
+        <section aria-labelledby="contact-form-title">
+            <article>
+                <h2 id="contact-form-title">Get In Touch</h2>
+                <p id="form-help">All fields marked as required must be completed before submission.</p>
+            </article>
+            <form action="#" method="post" aria-describedby="form-help">
                 <fieldset>
                     <legend>Your Details</legend>
 
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required
+                        minlength="2" maxlength="60" pattern="[A-Za-z\s'-]+">
 
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email"
+                        required maxlength="254">
 
                     <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+1 555-0123">
+                    <input type="tel" id="phone" name="phone" placeholder="+1 555-0123" autocomplete="tel" required
+                        pattern="^\+?[0-9\s\-()]{7,20}$">
+
+                    <label for="website">Website</label>
+                    <input type="url" id="website" name="website" placeholder="https://example.com" autocomplete="url">
+
+                    <label for="project-keywords">Project Keywords</label>
+                    <input type="search" id="project-keywords" name="project-keywords"
+                        placeholder="e.g. podcast, brand video, social campaign">
                 </fieldset>
 
                 <fieldset>
                     <legend>Service Enquiry</legend>
 
-                    <label>Service Type</label>
-                    <label><input type="radio" name="service" value="video" required> Video Production</label>
-                    <label><input type="radio" name="service" value="audio"> Audio Recording</label>
-                    <label><input type="radio" name="service" value="multimedia"> Multimedia Solutions</label>
+                    <fieldset>
+                        <legend>Service Type</legend>
+                        <label><input type="radio" name="service" value="video" required> Video Production</label>
+                        <label><input type="radio" name="service" value="audio"> Audio Recording</label>
+                        <label><input type="radio" name="service" value="multimedia"> Multimedia Solutions</label>
+                    </fieldset>
 
                     <label>
                         <input type="checkbox" name="newsletter" value="yes">
                         Subscribe to our newsletter
                     </label>
 
+                    <label>
+                        <input type="checkbox" name="terms" value="accepted" required>
+                        I agree to the contact terms and privacy policy
+                    </label>
+
                     <label for="budget">Estimated Budget</label>
-                    <select id="budget" name="budget">
+                    <select id="budget" name="budget" required>
                         <option value="">Select a range</option>
                         <option value="low">Under $1,000</option>
                         <option value="mid">$1,000 – $5,000</option>
@@ -60,21 +82,25 @@
                     </select>
 
                     <label for="project-date">Preferred Start Date</label>
-                    <input type="date" id="project-date" name="project-date">
+                    <input type="date" id="project-date" name="project-date" required min="2026-01-01" max="2028-12-31">
 
                     <label for="team-size">Team Size Required</label>
-                    <input type="number" id="team-size" name="team-size" min="1" max="50" placeholder="e.g. 3">
+                    <input type="number" id="team-size" name="team-size" min="1" max="50" required placeholder="e.g. 3">
                 </fieldset>
 
                 <fieldset>
                     <legend>Message</legend>
                     <label for="message">Your Message</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your project..."
-                        required></textarea>
+                    <textarea id="message" name="message" placeholder="Tell us about your project..." required
+                        minlength="20" maxlength="1000"></textarea>
                 </fieldset>
 
                 <button type="submit">Submit</button>
             </form>
+            <aside>
+                <h3>Response Time</h3>
+                <p>Our team usually replies within one business day.</p>
+            </aside>
         </section>
     </main>
 
