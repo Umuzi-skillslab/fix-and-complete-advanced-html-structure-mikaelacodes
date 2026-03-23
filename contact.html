@@ -11,37 +11,75 @@
 </head>
 
 <body>
-    <div class="top">
+    <header class="top">
         <h1>Contact Us</h1>
-        <div class="nav">
+        <nav class="nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="media.html">Media</a>
             <a href="contact.html">Contact</a>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <div>
-        <h2>Get In Touch</h2>
+    <main>
+        <section>
+            <h2>Get In Touch</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Your Details</legend>
 
-        <!-- Form with multiple errors -->
-        <form>
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Email">
-            <input type="text" placeholder="Phone">
-            <textarea placeholder="Message"></textarea>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required>
 
-            <!-- Missing: labels, proper input types (email, tel), validation attributes -->
-            <!-- Missing: radio buttons, checkboxes, select/dropdown, date/number inputs -->
-            <!-- Missing: fieldset for grouping -->
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-            <button>Submit</button>
-        </form>
-    </div>
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 555-0123">
+                </fieldset>
 
-    <div class="bottom">
+                <fieldset>
+                    <legend>Service Enquiry</legend>
+
+                    <label>Service Type</label>
+                    <label><input type="radio" name="service" value="video" required> Video Production</label>
+                    <label><input type="radio" name="service" value="audio"> Audio Recording</label>
+                    <label><input type="radio" name="service" value="multimedia"> Multimedia Solutions</label>
+
+                    <label>
+                        <input type="checkbox" name="newsletter" value="yes">
+                        Subscribe to our newsletter
+                    </label>
+
+                    <label for="budget">Estimated Budget</label>
+                    <select id="budget" name="budget">
+                        <option value="">Select a range</option>
+                        <option value="low">Under $1,000</option>
+                        <option value="mid">$1,000 – $5,000</option>
+                        <option value="high">$5,000+</option>
+                    </select>
+
+                    <label for="project-date">Preferred Start Date</label>
+                    <input type="date" id="project-date" name="project-date">
+
+                    <label for="team-size">Team Size Required</label>
+                    <input type="number" id="team-size" name="team-size" min="1" max="50" placeholder="e.g. 3">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Message</legend>
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+                </fieldset>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bottom">
         <p>Email: contact@mediaproduction.com</p>
-    </div>
+    </footer>
 </body>
 
 </html>

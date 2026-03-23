@@ -12,47 +12,73 @@
 </head>
 
 <body>
-    <div class="top">
+    <header class="top">
         <h1>Media Gallery</h1>
-        <div class="nav">
+        <nav class="nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="media.html">Media</a>
             <a href="contact.html">Contact</a>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <div>
-        <h2>Video Showcase</h2>
+    <main>
+        <section>
+            <h2>Video Showcase</h2>
+            <figure>
+                <video src="media/sample1.mp4" width="640" height="360" controls>
+                    Your browser does not support the video element.
+                </video>
+                <figcaption>Sample Production Reel 1</figcaption>
+            </figure>
+            <figure>
+                <video src="media/sample2.mp4" width="640" height="360" controls>
+                    Your browser does not support the video element.
+                </video>
+                <figcaption>Sample Production Reel 2</figcaption>
+            </figure>
+        </section>
 
-        <!-- First video - missing controls and fallback -->
-        <video src="media/sample1.mp4" width="640" height="360"></video>
+        <section>
+            <h2>Audio Sample</h2>
+            <figure>
+                <audio controls>
+                    <source src="media/sample.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <figcaption>Listen to our audio production quality.</figcaption>
+            </figure>
+        </section>
 
-        <!-- Second video missing entirely -->
-    </div>
+        <section>
+            <h2>Location</h2>
+            <figure>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14320.546!2d28.0473!3d-26.2041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sza!4v0"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Map showing studio location at 123 Media Street">
+                </iframe>
+                <figcaption>Visit our studio at 123 Media Street</figcaption>
+            </figure>
+        </section>
 
-    <div>
-        <h2>Audio Sample</h2>
-        <!-- Audio element missing completely -->
-        <p>Listen to our audio production quality.</p>
-    </div>
+        <section>
+            <h2>Client Testimonials</h2>
+            <figure>
+                <img src="images/client1.jpg" alt="Client 1 testimonial photo">
+                <figcaption>Jane Doe – CEO, BrandCo</figcaption>
+            </figure>
+            <figure>
+                <img src="images/client2.jpg" alt="Client 2 testimonial photo">
+                <figcaption>John Smith – Director, MediaGroup</figcaption>
+            </figure>
+        </section>
+    </main>
 
-    <div>
-        <h2>Location</h2>
-        <!-- iframe missing completely -->
-        <p>Visit our studio at 123 Media Street</p>
-    </div>
-
-    <div>
-        <h2>Client Testimonials</h2>
-        <img src="images/client1.jpg">
-        <img src="images/client2.jpg">
-        <!-- Missing figure/figcaption semantic markup -->
-    </div>
-
-    <div class="bottom">
+    <footer class="bottom">
         <p>Email: contact@mediaproduction.com</p>
-    </div>
+    </footer>
 </body>
 
 </html>
