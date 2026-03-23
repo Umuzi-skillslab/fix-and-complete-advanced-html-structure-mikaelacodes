@@ -1,40 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with our media production team.">
+    <meta name="author" content="Media Production Company">
     <title>Contact</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <div class="top">
+
+    <header class="top">
         <h1>Contact Us</h1>
-        <div class="nav">
+        <nav class="nav" aria-label="Main navigation">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="media.html">Media</a>
             <a href="contact.html">Contact</a>
-        </div>
-    </div>
-    
-    <div>
-        <h2>Get In Touch</h2>
-        
-        <!-- Form with multiple errors -->
-        <form>
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Email">
-            <input type="text" placeholder="Phone">
-            <textarea placeholder="Message"></textarea>
-            
-            <!-- Missing: labels, proper input types (email, tel), validation attributes -->
-            <!-- Missing: radio buttons, checkboxes, select/dropdown, date/number inputs -->
-            <!-- Missing: fieldset for grouping -->
-            
-            <button>Submit</button>
-        </form>
-    </div>
-    
-    <div class="bottom">
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section aria-labelledby="contact-form-title">
+            <article>
+                <h2 id="contact-form-title">Get In Touch</h2>
+                <p id="form-help">All fields marked as required must be completed before submission.</p>
+            </article>
+            <form action="#" method="post" aria-describedby="form-help">
+                <fieldset>
+                    <legend>Your Details</legend>
+
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required
+                        minlength="2" maxlength="60" pattern="[A-Za-z\s'-]+">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email"
+                        required maxlength="254">
+
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 555-0123" autocomplete="tel" required
+                        pattern="^\+?[0-9\s\-()]{7,20}$">
+
+                    <label for="website">Website</label>
+                    <input type="url" id="website" name="website" placeholder="https://example.com" autocomplete="url">
+
+                    <label for="project-keywords">Project Keywords</label>
+                    <input type="search" id="project-keywords" name="project-keywords"
+                        placeholder="e.g. podcast, brand video, social campaign">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Service Enquiry</legend>
+
+                    <fieldset>
+                        <legend>Service Type</legend>
+                        <label><input type="radio" name="service" value="video" required> Video Production</label>
+                        <label><input type="radio" name="service" value="audio"> Audio Recording</label>
+                        <label><input type="radio" name="service" value="multimedia"> Multimedia Solutions</label>
+                    </fieldset>
+
+                    <label>
+                        <input type="checkbox" name="newsletter" value="yes">
+                        Subscribe to our newsletter
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="terms" value="accepted" required>
+                        I agree to the contact terms and privacy policy
+                    </label>
+
+                    <label for="budget">Estimated Budget</label>
+                    <select id="budget" name="budget" required>
+                        <option value="">Select a range</option>
+                        <option value="low">Under R10,000</option>
+                        <option value="mid">R10,000 – R50,000</option>
+                        <option value="high">R50,000+</option>
+                    </select>
+
+                    <label for="project-date">Preferred Start Date</label>
+                    <input type="date" id="project-date" name="project-date" required min="2026-01-01" max="2028-12-31">
+
+                    <label for="team-size">Team Size Required</label>
+                    <input type="number" id="team-size" name="team-size" min="1" max="50" required placeholder="e.g. 3">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Message</legend>
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your project..." required
+                        minlength="20" maxlength="1000"></textarea>
+                </fieldset>
+
+                <button type="submit">Submit</button>
+            </form>
+            <aside>
+                <h3>Response Time</h3>
+                <p>Our team usually replies within one business day.</p>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="bottom">
         <p>Email: contact@mediaproduction.com</p>
-    </div>
+    </footer>
 </body>
+
 </html>

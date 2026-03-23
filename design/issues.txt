@@ -1,0 +1,70 @@
+Media Production Website Issues
+Issues Identification & Improvement Plan
+
+1. HTML Issues
+
+File	Issue	Fix Required
+All pages	Missing lang attribute on <html> tag	Add lang="en" for accessibility
+All pages	Missing <meta charset> and <meta viewport>	Add UTF-8 charset and responsive viewport
+All pages	Missing meta description for SEO	Add descriptive <meta name='description'>
+All pages	Divs used instead of semantic HTML5 elements	Use <header>, <nav>, <main>, <section>, <footer>, <article>
+about.html	Portfolio images lack alt attributes	Add descriptive alt text to all images
+about.html	Only 2 services listed; third is missing	Add Photography/Multimedia as 3rd service card
+media.html	Client images missing <figure> and <figcaption>	Wrap in semantic <figure> with <figcaption>
+contact.html	Inputs missing <label> elements	Add explicit <label for='id'> to every input
+contact.html	Email/phone use wrong input type='text'	Change to type='email' and type='tel'/ ‘phone’
+contact.html	Missing validation attributes	Add required, minlength, maxlength, pattern
+contact.html	No <fieldset> grouping	Group related inputs with <fieldset> and <legend>
+contact.html	Missing advanced input types	Add radio, checkbox, select, date, number inputs
+
+2. CSS Issues 
+
+File	Issue	Fix Required
+styles.css	Only 2-3 selector types used (needs 5+)	Add ID, attribute [type], child >, adjacent +, :nth-child selectors
+styles.css	Zero pseudo-classes used (needs 5+)	Add :hover, :focus, :active, :first-child, :nth-child, :checked
+styles.css	No flexbox layouts (needs 2+)	Apply flexbox to nav, services grid, hero section
+styles.css	No CSS Grid layout (needs 1+)	Apply grid to portfolio gallery and page layout
+styles.css	No keyframe animations	Add @keyframes for hero fade-in, scroll reveals, loading
+styles.css	No CSS transitions	Add transition on nav links, buttons, cards
+styles.css	No CSS transforms	Add scale/translateY on hover states
+styles.css	No text-shadow or box-shadow	Add shadows to headings and card components
+styles.css	Hero has poor colour contrast (#ddd on lightgray)	Fix to meet WCAG AA contrast ratio (4.5:1 minimum)
+styles.css	No media queries for responsive design	Add breakpoints at 768px and 480px
+styles.css	No CSS custom properties/variables	Define --primary, --accent, --font-body at :root
+styles.css	No video/audio element styling	Style media elements with max-width, border-radius
+
+3. Missing Media
+
+File	Issue	Fix Required
+media.html	Video 1 missing controls attribute	Add controls, autoplay muted loop attributes
+media.html	Video 2 missing entirely	Add second <video> with controls and <source> fallback
+media.html	Audio element completely absent	Add <audio controls> with MP3/OGG source and fallback text
+media.html	iframe (map/embed) completely absent	Add Google Maps iframe with title, width, height, loading=lazy
+media.html	No video fallback text	Add fallback paragraph inside <video> tags
+
+4. Advanced Requirements
+
+4.1 Flexbox Layouts 
+•	Navigation bar: display:flex with gap and align-items:center for horizontal nav with logo
+•	Services section on About page: flex-wrap row of 3 cards with equal widths and gap
+
+4.2 CSS Grid Layout 
+•	Portfolio gallery: grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) for responsive masonry-style layout
+
+4.3 Animation & Effects 
+•	@keyframes fadeSlideIn: hero text animates in on page load (opacity 0->1, translateY 30px->0)
+•	@keyframes pulse: CTA button subtle pulsing glow effect
+•	CSS transitions (0.3s ease) on all interactive elements: nav links, buttons, cards
+•	transform: scale(1.05) on portfolio images and service cards on :hover
+•	box-shadow elevation change on :hover for depth effect
+
+4.4 Selectors & Pseudo-Classes 
+•	5+ selector types: element, .class, #id, [attribute], nav > a (child), h2 + p (adjacent sibling), input[type='email']
+•	5+ pseudo-classes: :hover, :focus, :active, :first-child, :nth-child(odd), :checked, :required, :not()
+
+4.5 Responsive Design
+•	Mobile-first approach with breakpoints at 768px (tablet) and 480px (mobile)
+•	Navigation collapses or stacks on small screens
+•	Grid/flex columns reduce to 1 on mobile
+
+

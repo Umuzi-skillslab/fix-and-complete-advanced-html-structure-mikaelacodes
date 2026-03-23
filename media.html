@@ -1,50 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore our media gallery including videos, audio samples, and client testimonials.">
+    <meta name="author" content="Media Production Company">
     <title>Media Gallery</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <div class="top">
+    <header class="top">
         <h1>Media Gallery</h1>
-        <div class="nav">
+        <nav class="nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="media.html">Media</a>
             <a href="contact.html">Contact</a>
-        </div>
-    </div>
-    
-    <div>
-        <h2>Video Showcase</h2>
-        
-        <!-- First video - missing controls and fallback -->
-        <video src="media/sample1.mp4" width="640" height="360"></video>
-        
-        <!-- Second video missing entirely -->
-    </div>
-    
-    <div>
-        <h2>Audio Sample</h2>
-        <!-- Audio element missing completely -->
-        <p>Listen to our audio production quality.</p>
-    </div>
-    
-    <div>
-        <h2>Location</h2>
-        <!-- iframe missing completely -->
-        <p>Visit our studio at 123 Media Street</p>
-    </div>
-    
-    <div>
-        <h2>Client Testimonials</h2>
-        <img src="images/client1.jpg">
-        <img src="images/client2.jpg">
-        <!-- Missing figure/figcaption semantic markup -->
-    </div>
-    
-    <div class="bottom">
+        </nav>
+    </header>
+
+    <main>
+        <section class="video-showcase">
+            <h2>Video Showcase</h2>
+            <figure>
+                <video src="media/sample1.mp4" width="640" height="360" controls>
+                    Your browser does not support the video element.
+                </video>
+                <figcaption>Sample Production Reel 1</figcaption>
+            </figure>
+            <figure>
+                <video src="media/sample2.mp4" width="640" height="360" controls>
+                    Your browser does not support the video element.
+                </video>
+                <figcaption>Sample Production Reel 2</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Audio Sample</h2>
+            <figure>
+                <audio controls>
+                    <source src="media/sample3.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <figcaption>Listen to our audio production quality.</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Location</h2>
+            <figure>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14320.546!2d28.0473!3d-26.2041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sza!4v0"
+                    class="map-frame" width="600" height="450" allowfullscreen loading="lazy"
+                    title="Map showing studio location at 123 Media Street">
+                </iframe>
+                <figcaption>Visit our studio at 123 Media Street</figcaption>
+            </figure>
+        </section>
+
+        <section class="photo-gallery-grid">
+            <h2>Photo Gallery</h2>
+            <figure>
+                <img src="images/gallery1.jpg" alt="Behind-the-scenes video shoot">
+                <figcaption>Behind the scenes – Corporate Video Shoot</figcaption>
+            </figure>
+            <figure>
+                <img src="images/gallery2.jpg" alt="Audio recording studio session">
+                <figcaption>Live Recording Session in Studio A</figcaption>
+            </figure>
+            <figure>
+                <img src="images/gallery3.jpg" alt="Post-production editing suite">
+                <figcaption>Post-Production Editing Suite</figcaption>
+            </figure>
+            <figure>
+                <img src="images/gallery4.jpg" alt="Outdoor location shoot">
+                <figcaption>On-Location Shoot – Downtown Campaign</figcaption>
+            </figure>
+            <figure>
+                <img src="images/gallery5.jpg" alt="Color grading process on a monitor">
+                <figcaption>Color Grading Process</figcaption>
+            </figure>
+            <figure>
+                <img src="images/gallery6.jpg" alt="Lighting setup for an indoor production set">
+                <figcaption>Studio Lighting Setup for Interview Production</figcaption>
+            </figure>
+        </section>
+
+        <section class="testimonials-grid">
+            <h2>Client Testimonials</h2>
+            <figure>
+                <img src="images/client1.jpg" alt="Client 1 testimonial photo">
+                <figcaption>Jane Doe – CEO, BrandCo</figcaption>
+            </figure>
+            <figure>
+                <img src="images/client2.jpg" alt="Client 2 testimonial photo">
+                <figcaption>John Smith – Director, MediaGroup</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer class="bottom">
         <p>Email: contact@mediaproduction.com</p>
-    </div>
+    </footer>
 </body>
+
 </html>
